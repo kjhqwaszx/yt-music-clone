@@ -21,6 +21,12 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "../../../../../Program Files/JetBrains/WebStorm 2022.2.2/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts"
+  ],
   "exclude": ["node_modules"]
 }
