@@ -22,6 +22,7 @@ export default function Navigator() {
 
   return(
     <div>
+      {/* 바로가기메뉴 */}
       <section className="flex flex-col gap2 p-4">
         {routes.map((route) => {
           return (
@@ -35,9 +36,11 @@ export default function Navigator() {
           )
         })}
       </section>
+      {/* 구분선 */}
       <section className="px-6">
         <div className="w-full h-[1px] bg-neutral-700"></div>
       </section>
+      {/* 재생목록 */}
       <section className="px-6">
         <div className=" hoover: bg-neutral-700 cursor-pointer flex flex-row items-center bg-neutral-800 my-6 rounded-3xl p-2 font-[200] justify-center gap-2">
           <FiPlus size={24}/>

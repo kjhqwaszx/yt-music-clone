@@ -8,7 +8,8 @@ type Props = {
 export default function Sidebar({children}:Props){
   return(
     <div className="flex flex-row h-full">
-      <nav className="w-[240px] border-r-[1px] border-neutral-600">
+      {/* 모바일 환경에서는 Side Bar hidden, Pc 환경에서는 On */}
+      <nav className="hidden lg:block w-[240px] border-r-[1px] border-neutral-600">
         <div className="p-[24px]">
           <Logo/>
         </div>
