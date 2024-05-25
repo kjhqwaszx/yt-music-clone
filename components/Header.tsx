@@ -9,6 +9,7 @@ import {FiSearch} from "react-icons/fi";
 import HeaderDrawer from "@/components/element/HeaderDrawer";
 import Logo from "@/components/element/Logo";
 import {cn} from "@/lib/utils";
+import useUIState from "@/components/store/useUIState";
 
 type Props={
   children: ReactNode
@@ -16,18 +17,20 @@ type Props={
 export default function Header({children}: Props){
   const [isScrolled, setIsScrolled] = useState(false)
   const headRef = useRef(null)
+  const {headerImageSrc} = useUIState()
+
 
   useEffect(()=>{
     const currentHeadRef = headRef.current;
 
     const handleScroll = () => {
-      const scrollValue = headRef?.current?.scrollTop;
+      const scrollValue = headRef.current.scrollTop;
       setIsScrolled(scrollValue !== 0);
     };
 
-    currentHeadRef?.addEventListener("scroll", handleScroll);
+    currentHeadRef.addEventListener("scroll", handleScroll);
     return () => {
-      currentHeadRef?.removeEventListener("scroll", handleScroll);
+      currentHeadRef.removeEventListener("scroll", handleScroll);
     };
   },[])
 
@@ -36,7 +39,7 @@ export default function Header({children}: Props){
       {/* bg Section*/}
       <section className="absolute top-0 w-full">
         <div className="relative h-[400px] w-full">
-          <Image fill className="object-cover" src="https://images.unsplash.com/photo-1707833558984-3293e794031c" alt="mediaItem"/>
+          <Image fill className="object-cover" src={headerImageSrc || "https://images.unsplash.com/photo-1707833558984-3293e794031c"} alt="mediaItem"/>
           <div className="absolute h-[400px] top-0 bg-black opacity-40 w-full"></div>
           <div className="absolute h-[400px] top-0 bg-gradient-to-t from-black w-full"></div>
         </div>
