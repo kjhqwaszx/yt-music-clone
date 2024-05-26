@@ -28,6 +28,6 @@ export function chunkArray(arr: unknown[], chunkSize: number) {
   return resultArray;
 }
 
-export function genreateRandomHex() {
+export function generateRandomHex() {
   return "#" + ((Math.random() * 0xffffff) << 0).toString(16).padStart(6, "0");
 }

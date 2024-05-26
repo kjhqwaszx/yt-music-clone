@@ -5,3 +5,9 @@ export interface Song {
   src: string
   imageSrc: string
 }
+
+// 인기곡
+export interface TopSong extends Song{
+  prevRank: number;
+  rank: number;
+}
