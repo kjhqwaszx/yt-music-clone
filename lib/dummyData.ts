@@ -101,7 +101,7 @@ export const dummyAllSongList = [
   },
 ];
 
-export const getSongsBychannel = (channel) => {
+export const getSongsBychannel = (channel: string) => {
   return dummyAllSongList.filter((song) => song.channel === channel);
 };
 
@@ -145,11 +145,11 @@ export const dummyPlaylistArray = [
 
 export const getAllPlaylist = async () => [...dummyPlaylistArray];
 
-export const getPlaylistByOwner = (owner) => {
+export const getPlaylistByOwner = (owner: string) => {
   return dummyPlaylistArray.filter((playlist) => playlist.owner === owner);
 };
 
-export const getPlaylistById = async (id) => {
+export const getPlaylistById = async (id: number) => {
   return dummyPlaylistArray.filter((playlist) => playlist.id === id)?.[0];
 };
 
@@ -207,7 +207,7 @@ export const dummyChannelList = [
   },
 ];
 
-export const getChannelById = async (id) => {
+export const getChannelById = async (id: number) => {
   return dummyChannelList.filter((channel) => channel.id === id)?.[0];
 };
 
