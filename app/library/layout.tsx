@@ -1,4 +1,4 @@
-export default function layout({children}){
+export default function layout({children}:{children:any}){
   return(
     <div>
       {children}
