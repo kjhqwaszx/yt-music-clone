@@ -9,10 +9,12 @@ import HeaderDrawer from '@/components/HeaderDrawer';
 import Logo from '@/components/element/Logo';
 import {useEffect, useRef, useState} from 'react';
 import {cn} from '@/lib/utils';
+import useUIState from '@/app/hooks/useUIState';
 
 export default function Header({children}){
   const [isScrolled, setIsScrolled] = useState(false);
   const headRef = useRef()
+  const { headerImageSrc } = useUIState()
 
   useEffect(() => {
     const handleScroll = () =>{
@@ -30,7 +32,7 @@ export default function Header({children}){
     <header ref={headRef} className='relative overflow-y-auto w-full h-full'>
       <section className='absolute top-0 w-full'>
         <div className='relative h-[400px] w-full'>
-          <Image fill src={'https://images.unsplash.com/photo-1720884413532-59289875c3e1?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} alt='header img'/>
+          <Image fill src={headerImageSrc || 'https://images.unsplash.com/photo-1720884413532-59289875c3e1?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} alt='header img'/>
         </div>
         <div className='absolute h-[400px] top-0 bg-black opacity-40 w-full'></div>
         <div className='absolute h-[400px] top-0 bg-gradient-to-t from-black w-full '></div>
