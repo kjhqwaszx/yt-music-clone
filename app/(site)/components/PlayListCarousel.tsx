@@ -7,7 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import PlayListCard from '@/app/(site)/components/home/PlayListCard';
+import PlayListCard from '@/app/(site)/components/PlayListCard';
 
 
 

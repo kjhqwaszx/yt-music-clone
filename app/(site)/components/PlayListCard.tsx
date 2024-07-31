@@ -9,12 +9,14 @@ import {FiPlay} from 'react-icons/fi';
 import IconButton from '@/components/element/iconButton';
 
 export default function PlayListCard({playlist}: {playlist: Playlist}) {
-  const { owner, playlistName, songList} = playlist
+  const { id, owner= "", playlistName= "", songList = []} = playlist ?? {}
   const imgSrc = getRandomElementFromArray(songList).imageSrc
   const {push} = useRouter()
 
   const onClickCard = () =>{
-    push(`/playlist?id=${playlist?.id}`)
+    if(id){
+      push(`/playlist?id=${id}`)
+    }
   }
   const onClickPlay = () =>{
   //   todo: Play
