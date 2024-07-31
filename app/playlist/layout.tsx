@@ -5,8 +5,8 @@ type Prop={
 }
 export default function layout({children}: Prop){
   return(
-    <div className="w-full h-full">
+    <>
       {children}
-    </div>
+    </>
   )
 }
