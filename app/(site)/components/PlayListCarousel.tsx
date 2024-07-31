@@ -50,7 +50,7 @@ export default function PlayListCarousel({title, subTitle, thumbnail, playlistAr
           {
             playlistArray?.map((playlist, index)=>{
               return(
-                <CarouselItem key={index} className=" sm:basis-1/2 md:basis-1/4 lg:basis-1/5" >
+                <CarouselItem key={index} className=" sm:basis-1/2 md:basis-1/4 lg:basis-1/5 xl:basis-1/6 2xl:basis-1/7" >
                   <PlayListCard playlist={playlist}/>
                 </CarouselItem>
               )
