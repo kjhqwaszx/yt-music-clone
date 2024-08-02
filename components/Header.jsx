@@ -17,14 +17,15 @@ export default function Header({children}){
   const { headerImageSrc } = useUIState()
 
   useEffect(() => {
+    const currentHeaderRef = headRef?.current
     const handleScroll = () =>{
-      const scrollValue = headRef?.current?.scrollTop;
+      const scrollValue = currentHeaderRef?.scrollTop;
       setIsScrolled(scrollValue !== 0)
     }
-    headRef?.current?.addEventListener("scroll", handleScroll)
+    currentHeaderRef?.addEventListener("scroll", handleScroll)
 
     return ()=>{
-      headRef?.current?.removeEventListener("scroll", handleScroll)
+      currentHeaderRef?.removeEventListener("scroll", handleScroll)
     }
 
   }, []);
