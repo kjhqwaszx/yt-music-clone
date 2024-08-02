@@ -1,17 +1,21 @@
 'use client'
 
-import {TopSong} from '@/model/song';
+import {Song} from '@/model/song';
 import Image from 'next/image';
-import {FaCircle} from 'react-icons/fa';
-import {AiOutlineCaretDown, AiOutlineCaretUp} from 'react-icons/ai';
 import {FiMoreVertical, FiPlayCircle, FiThumbsDown, FiThumbsUp} from 'react-icons/fi';
 import IconButton from '@/components/element/IconButton';
+import {useRouter} from 'next/navigation';
 
 type Props={
-  song:TopSong
+  song: Song
 }
 
-export default function SongCard({ song }: Props) {
+export default function SongCardRowExpand({ song }: Props) {
+  const {channel, channelId} = song
+  const {push} = useRouter();
+  const  onClickChannel = () =>{
+    push(`/channel/${channelId}`)
+  }
 
   return (
     <article className='flex flex-row gap-4 h-[48px] w-full items-center group relative'>
@@ -23,26 +27,13 @@ export default function SongCard({ song }: Props) {
         </section>
       </div>
 
-      {/* 순위변동 */}
-      <div className='flex flex-row items-center gap-4'>
-        <div>
-          {
-            song?.rank === song?.prevRank ? <FaCircle size={8}/> :
-              song?.rank > song?.prevRank ? <AiOutlineCaretUp size={10} color='#3CA63F'/> :
-                <AiOutlineCaretDown size={10} color='#FF0000'/>
-          }
-        </div>
+      <div className='flex flex-row gap-4 justify-between basis-1/3'>
+        <div className='w-[130px] truncate'>{song?.name}</div>
+        <div onClick={onClickChannel} className='text-neutral-500 hover:underline cursor-pointer'>{channel}</div>
       </div>
 
-      <div>
-        {song?.rank + 1}
-      </div>
 
-      <div>
-        {song?.name}
-      </div>
-
-      <section className=' hidden group-hover:flex absolute top-0 right-0 flex-row h-[48px] w-1/2 justify-end items-center bg-[rgba(0,0,0,0.7)]'>
+      <section className=' hidden group-hover:flex absolute top-0 right-0 flex-row h-[48px] w-[120px] justify-end items-center bg-[rgba(0,0,0,0.7)]'>
         <IconButton icon={<FiThumbsDown size={20}/>}/>
         <IconButton icon={<FiThumbsUp size={20}/>}/>
         <IconButton icon={<FiMoreVertical size={20}/>}/>

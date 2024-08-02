@@ -6,7 +6,7 @@ import {getRandomElementFromArray} from '@/lib/utils';
 import {useRouter} from 'next/navigation';
 import {MdMoreVert} from 'react-icons/md';
 import {FiPlay} from 'react-icons/fi';
-import IconButton from '@/components/element/iconButton';
+import IconButton from '@/components/element/IconButton';
 
 export default function PlayListCard({playlist}: {playlist: Playlist}) {
   const { id, owner= "", playlistName= "", songList = []} = playlist ?? {}

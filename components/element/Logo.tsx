@@ -2,7 +2,7 @@
 import Image from "next/image";
 import {RxHamburgerMenu} from "react-icons/rx";
 import {useRouter} from "next/navigation";
-import IconButton from "@/components/element/iconButton";
+import IconButton from "@/components/element/IconButton";
 import {IoCloseOutline} from 'react-icons/io5';
 
 export default function Logo({isInDrawer = false, onClickClose = () =>{}}) {
