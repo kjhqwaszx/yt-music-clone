@@ -2,7 +2,7 @@
 import {TopSong} from '@/model/song';
 import SongCard from '@/app/explore/_components/SongCard';
 
-export default function PlayListCard({ topSong }: {topSong: TopSong[]}) {
+export default function SongListCard({ topSong }: {topSong: TopSong[]}) {
 
   return (
     <div className='flex flex-col gap-4 '>
