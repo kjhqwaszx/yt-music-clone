@@ -255,6 +255,30 @@ export const homeCategoryList = [
   },
 ];
 
+// 보관함 카테고리 리스트
+export const libraryCategoryList = [
+  {
+    label: "재생목록",
+    src: "https://images.unsplash.com/photo-1487956382158-bb926046304a",
+  },
+  {
+    label: "팟캐스트",
+    src: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70",
+  },
+  {
+    label: "노래",
+    src: "https://images.unsplash.com/photo-1490730141103-6cac27aaab94",
+  },
+  {
+    label: "앨범",
+    src: "https://images.unsplash.com/photo-1528962862197-29c4f24ccc04",
+  },
+  {
+    label: "아티스트",
+    src: "https://images.unsplash.com/photo-1472745433479-4556f22e32c2",
+  }
+];
+
 // 분위기 및 장르
 // Array.from(document.querySelectorAll("#items")[7].querySelectorAll("button")).map( el => el.textContent.replaceAll("\n","").trim())
 export const dymmyGenreList = [
