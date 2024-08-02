@@ -101,8 +101,8 @@ export const dummyAllSongList = [
   },
 ];
 
-export const getSongsBychannel = (channel: any) => {
-  return dummyAllSongList.filter((song) => song.channel === channel);
+export const getSongsBychannel = (channel: string) => {
+  return dummyAllSongList.filter((song) => song?.channel === channel);
 };
 
 // playlist
