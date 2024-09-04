@@ -1,6 +1,5 @@
 import {create} from 'zustand';
 import {Song} from '@/model/song';
-import {dummyAllSongList} from '@/lib/dummyData';
 
 interface PlayerState {
   isVisiblePlayer: boolean;
@@ -18,7 +17,7 @@ interface PlayerState {
 }
 
 const usePlayerState = create<PlayerState>((set)=>({
-  isVisiblePlayer: true,
+  isVisiblePlayer: false,
   setIsVisiblePlayer: (isVisiblePlayer: boolean) => set({isVisiblePlayer}),
 
   activeSong: null,

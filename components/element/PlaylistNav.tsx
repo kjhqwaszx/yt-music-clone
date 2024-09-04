@@ -1,15 +1,16 @@
 'use client'
 import {Playlist} from "@/model/playlist";
 import {IoMdPlayCircle} from "react-icons/io";
+import usePlayerState from '@/hooks/usePlayerState';
 
 type Prop={
   playlist: Playlist
 }
 export default function PlaylistNav({playlist}: Prop){
-  const {owner, playlistName} = playlist
-
+  const {owner, playlistName, songList} = playlist
+  const { addSongList } = usePlayerState()
   const onClickPlay = () =>{
-    // todo play music
+    addSongList(songList)
   }
 
   return(

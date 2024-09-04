@@ -7,19 +7,22 @@ import {useRouter} from 'next/navigation';
 import {MdMoreVert} from 'react-icons/md';
 import {FiPlay} from 'react-icons/fi';
 import IconButton from '@/components/element/IconButton';
+import usePlayerState from '@/hooks/usePlayerState';
 
 export default function PlayListCard({playlist}: {playlist: Playlist}) {
   const { id, owner= "", playlistName= "", songList = []} = playlist ?? {}
   const imgSrc = getRandomElementFromArray(songList).imageSrc
   const {push} = useRouter()
+  const { addSongList } = usePlayerState()
 
   const onClickCard = () =>{
     if(id){
       push(`/playlist?list=${id}`)
     }
   }
-  const onClickPlay = () =>{
-  //   todo: Play
+  const onClickPlay = (e: { stopPropagation: () => void; }) =>{
+    e.stopPropagation();
+    addSongList(songList)
   }
   return (
     <article className='h-[240px] cursor-pointer'>

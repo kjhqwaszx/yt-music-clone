@@ -19,7 +19,7 @@ export default function LibraryListCard({playlist}: {playlist: Playlist}) {
     }
   }
   const onClickPlay = () =>{
-  //   todo: Play
+
   }
   return (
     <article className='h-[240px] cursor-pointer'>
