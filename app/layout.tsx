@@ -26,7 +26,13 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Sidebar> {children} </Sidebar>
+          <Sidebar>
+            <div className='w-full h-full'>
+              <Header>
+                {children}
+              </Header>
+            </div>
+          </Sidebar>
           <PlayerWrapper/>
         </ThemeProvider>
       </body>

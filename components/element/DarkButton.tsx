@@ -5,8 +5,8 @@ import {ReactNode} from 'react';
 
 type Props={
   icon?: ReactNode
-  label: string
-  className: any
+  label?: string
+  className?: any
 }
 
 export default function DarkButton({icon, label, className, ...props}: Props) {

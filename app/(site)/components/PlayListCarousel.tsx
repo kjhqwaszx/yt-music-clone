@@ -12,7 +12,7 @@ import PlayListCard from '@/app/(site)/components/PlayListCard';
 
 
 type PhotoListCarouselProps = {
-  title: string;
+  title?: string;
   subTitle?: string;
   thumbnail?: ReactNode;
   playlistArray?: Playlist[]
