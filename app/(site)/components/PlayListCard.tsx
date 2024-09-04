@@ -15,7 +15,7 @@ export default function PlayListCard({playlist}: {playlist: Playlist}) {
 
   const onClickCard = () =>{
     if(id){
-      push(`/playlist?id=${id}`)
+      push(`/playlist?list=${id}`)
     }
   }
   const onClickPlay = () =>{
@@ -23,8 +23,8 @@ export default function PlayListCard({playlist}: {playlist: Playlist}) {
   }
   return (
     <article className='h-[240px] cursor-pointer'>
-      <section className='relative h-[136px] group'>
-        <Image src={imgSrc} alt='songThumbnail' fill={true} onClick={onClickCard} className='object-cover' />
+      <section className='relative h-[136px] group' onClick={onClickCard}>
+        <Image src={imgSrc} alt='songThumbnail' fill={true}  className='object-cover' />
         <div className='hidden relative group-hover:block bg-gradient-to-b from-[rgba(0,0,0,0.7)] top-0 w-full h-[136px]'>
           <div className='absolute top-2 right-4'>
             <IconButton icon={<MdMoreVert size={20}/>}></IconButton>

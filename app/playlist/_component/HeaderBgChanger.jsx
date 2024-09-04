@@ -1,7 +1,7 @@
 'use client'
 
 import {useEffect} from 'react';
-import useUIState from '@/app/hooks/useUIState';
+import useUIState from '@/hooks/useUIState';
 
 export default function HeaderBgChanger({imageSrc}){
 

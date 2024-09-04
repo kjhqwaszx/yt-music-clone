@@ -2,7 +2,7 @@
 
 import {homeCategoryList} from '@/lib/dummyData';
 import {cn} from '@/lib/utils';
-import useUIState from '@/app/hooks/useUIState';
+import useUIState from '@/hooks/useUIState';
 
 export default function Category(){
   const { homeCategory, setHomeCategory, setHeaderImageSrc } = useUIState()

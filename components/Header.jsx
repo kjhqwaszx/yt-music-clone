@@ -9,7 +9,7 @@ import HeaderDrawer from '@/components/HeaderDrawer';
 import Logo from '@/components/element/Logo';
 import {useEffect, useRef, useState} from 'react';
 import {cn} from '@/lib/utils';
-import useUIState from '@/app/hooks/useUIState';
+import useUIState from '@/hooks/useUIState';
 
 export default function Header({children}){
   const [isScrolled, setIsScrolled] = useState(false);

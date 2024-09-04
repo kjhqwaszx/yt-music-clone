@@ -7,7 +7,6 @@ interface UIState {
   setHeaderImageSrc: (src: string) => void
   libraryCategory: string
   setLibraryCategory: (value: string) => void
-
 }
 const useUIState = create<UIState>((set)=>({
   homeCategory: "",

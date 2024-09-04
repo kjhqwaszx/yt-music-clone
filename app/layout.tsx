@@ -4,6 +4,7 @@ import {ThemeProvider} from "@/providers/themeProvider";
 import React, {ReactNode} from "react";
 import Sidebar from "@/components/Sidebar";
 import Header from '@/components/Header';
+import PlayerWrapper from '@/components/player/PlayerWrapper';
 
 export const metadata: Metadata = {
   title: "Clone YT Music",
@@ -25,13 +26,8 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Sidebar>
-            <div className='w-full h-full'>
-              <Header>
-                {children}
-              </Header>
-            </div>
-          </Sidebar>
+          <Sidebar> {children} </Sidebar>
+          <PlayerWrapper/>
         </ThemeProvider>
       </body>
     </html>
